@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace Tables_Quiz
 {
-    [Activity(Label = "Tables_Quiz", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Tables Quiz", MainLauncher = true, Icon = "@drawable/einstein")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -28,11 +28,13 @@ namespace Tables_Quiz
             {
                 var intent = new Intent(this, typeof(QuizActivity));
 
+                //variables to hold the type of quiz chosen.
                 var userSelectionAdd = false;
                 var userSelectionSub = false;
                 var userSelectionMult = false;
                 var userSelectionDiv = false;
 
+                //variable for chosen quiz type is given a true value.
                 if (addition.Checked)
                 {
                     userSelectionAdd = true;
@@ -50,6 +52,7 @@ namespace Tables_Quiz
                     userSelectionDiv = true;
                 }
 
+                //variables are sent to QuizActivity.cs.
                 intent.PutExtra("CheckAddData", userSelectionAdd);
                 intent.PutExtra("CheckSubData", userSelectionSub);
                 intent.PutExtra("CheckMultData", userSelectionMult);
